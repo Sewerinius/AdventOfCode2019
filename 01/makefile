@@ -8,8 +8,12 @@ a: a.hs
 b: b.hs
 	$(CC) -o b b.hs
 
-run: a b
+runall: runa runb
+
+runa: a
 	./a in.txt
+
+runb: b
 	./b in.txt
 
 clean:
