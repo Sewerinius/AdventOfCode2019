@@ -20,7 +20,8 @@ module B where
             mode = div opcode 100
             trac = trace ("stepTrac -> op=" ++ show opcode ++ ", mode=" ++ show mode ++ ", ip=" ++ show ip) 0
         in
-            case trac + op of
+            -- case trac + op of
+            case op of
                 1 -> return $ addInt mode (ip+1) v
                 2 -> return $ multInt mode (ip+1) v
                 3 -> readInt mode (ip+1) v
