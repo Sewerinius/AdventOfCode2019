@@ -26,8 +26,6 @@ nextNeighbours visited ((x, y), z) = let
     newVisited = foldl (flip Set.insert) visited notVisited
     in (newVisited, notVisited)
 
---TODO: Its may find faster routes going through the negetives
-
 checkNeighbour :: Labirynth -> EndsData -> Point -> Point -> Maybe Point
 checkNeighbour map' (portals, start@(startxy,_), end@(endxy,_)) mPos@(myPosxy, z) nPos@(neighPosxy, _) | up && myPosxy == startxy = Nothing
                                                          | up && mPos == end = Just nPos
